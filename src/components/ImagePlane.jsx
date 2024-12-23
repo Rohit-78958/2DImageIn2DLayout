@@ -119,7 +119,6 @@ export default function ImagePlane({ position, machineID, scaling=0.8, machineNa
         <LiveDataDisplay 
           machineData={machineData} 
           position={[3, 4.5, 0.1]}
-          //onDataUpdate={(data) => setMachineData(data)}
           machineName = {machineName}
         />
       )}

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Html } from '@react-three/drei';
 
 function LiveDataDisplay({ machineData, distanceFactor = 16, position, machineName }) {
-  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   const keys = ['AE', 'PE', 'OEE', 'DownTime', 'PartCount', 'key6'];
