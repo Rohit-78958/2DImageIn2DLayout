@@ -63,7 +63,7 @@ export default function ImagePlane({ position, machineID, scaling=0.8, machineNa
     };
 
     fetchData();
-    const intervalId = setInterval(fetchData, 2000);
+    const intervalId = setInterval(fetchData, 20000);
     return () => clearInterval(intervalId);
   }, [machineID]);
 
@@ -108,18 +108,18 @@ export default function ImagePlane({ position, machineID, scaling=0.8, machineNa
       </group>
       
       {machineData && machineData[2] < 60 && (
-        <Html position={[0, 6, 0]}>
+        <Html position={[-2, 5, 0]}>
           <div className="flex items-center justify-center bg-red-500 rounded-full p-2 transform -translate-y-2">
-            <AlertTriangle className="text-white w-8 h-8" />
+            <AlertTriangle className="text-white w-4 h-4" />
           </div>
         </Html>
       )}
 
       {isLiveDataVisible && (
         <LiveDataDisplay 
-          machineID={machineID} 
+          machineData={machineData} 
           position={[3, 4.5, 0.1]}
-          onDataUpdate={(data) => setMachineData(data)}
+          //onDataUpdate={(data) => setMachineData(data)}
           machineName = {machineName}
         />
       )}
